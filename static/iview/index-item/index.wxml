@@ -1,0 +1,11 @@
+<div class="i-index-item i-class">
+    <div class="i-index-item-header">{{name}}</div>
+    <div class="i-index-item-content">
+        <slot></slot>
+    </div>
+</div>
+<wxs module="parse">
+    module.exports = {
+       
+    }
+</wxs>

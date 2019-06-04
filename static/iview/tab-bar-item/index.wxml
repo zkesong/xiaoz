@@ -1,0 +1,10 @@
+<div class="i-class i-tab-bar-item">
+    <i-badge dot="{{ dot }}" count="{{ dot ? 0 : count }}">
+        <div>
+            <i-icon wx:if="{{ icon || currentIcon }}" i-class="i-tab-bar-item-icon {{ current ? 'item-index--i-tab-bar-item-icon-current' : '' }}" color="{{ current ? currentColor : '' }}" type="{{ current ? currentIcon : icon }}" size="22"></i-icon>
+            <image wx:else class="i-tab-bar-item-img" src="{{ current ? currentimg : img }}"></image>
+            <div class="i-tab-bar-item-title {{ current ? 'i-tab-bar-item-title-current' : '' }}" wx:if="{{ current && currentColor }}" style="color: {{ currentColor }}">{{ title }}</div>
+            <div class="i-tab-bar-item-title {{ current ? 'i-tab-bar-item-title-current' : '' }}" wx:else>{{ title }}</div>
+        </div>
+    </i-badge>
+</div>

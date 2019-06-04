@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/topic/main",
+    "pages/mine/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小z空间",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#2c2c2c",
+    "color": "#cdcdcd",
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "首页",
+        "iconPath": "static/tabs/index.png",
+        "selectedIconPath": "static/tabs/index-active.png"
+      },
+      {
+        "pagePath": "pages/topic/main",
+        "text": "话题",
+        "iconPath": "static/tabs/topic.png",
+        "selectedIconPath": "static/tabs/topic-active.png"
+      },
+      {
+        "pagePath": "pages/mine/main",
+        "text": "我的",
+        "iconPath": "static/tabs/mine.png",
+        "selectedIconPath": "static/tabs/mine-active.png"
+      }
+    ]
+  }
+}

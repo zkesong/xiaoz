@@ -1,0 +1,4 @@
+<div class="i-class i-avatar i-avatar-{{ shape }} i-avatar-{{ size }} {{ src ? 'i-avatar-image' : '' }}">
+    <image src="{{ src }}" wx:if="{{ src !== '' }}"></image>
+    <div class="i-avatar-string" wx:else><slot></slot></div>
+</div>

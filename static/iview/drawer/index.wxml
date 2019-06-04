@@ -1,0 +1,6 @@
+<div class="i-class i-drawer {{ visible ? 'i-drawer-show' : '' }} {{ 'i-drawer-' + mode }}">
+    <div wx:if="{{ mask }}" class="i-drawer-mask" bindtap="handleMaskClick"></div>
+    <div class="i-drawer-container">
+        <slot></slot>
+    </div>
+</div>

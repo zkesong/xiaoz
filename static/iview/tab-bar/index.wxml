@@ -1,0 +1,6 @@
+<div class="i-class i-tab-bar {{ fixed ? 'i-tab-bar-fixed' : '' }}">
+    <slot></slot>
+    <div class="i-tab-bar-list">
+        <div class="i-tab-bar-layer" wx:for="{{ list }}" wx:key="{{ item.key }}" data-key="{{ item.key }}" bindtap="handleClickItem" style="width: {{ 100 / list.length }}%"></div>
+    </div>
+</div>

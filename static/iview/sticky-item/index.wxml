@@ -1,0 +1,10 @@
+<div class="i-sticky-item">
+    <div class="i-sticky-item-header i-class {{ isFixed === true ? 'i-sticky-fixed' : '' }}">
+        <div class="i-sticky-title">
+            <slot name="title"></slot>
+        </div>
+    </div>
+    <div class="i-index-item-content">
+        <slot name="content"></slot>
+    </div>
+</div>

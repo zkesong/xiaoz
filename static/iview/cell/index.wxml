@@ -1,0 +1,16 @@
+<div bindtap="handleTap" class="i-class i-cell {{ isLastCell ? 'i-cell-last' : '' }} {{ isLink ? 'i-cell-access' : '' }}">
+    <div class="i-cell-icon">
+        <slot name="icon"></slot>
+    </div>
+    <div class="i-cell-bd">
+        <div wx:if="{{ title }}" class="i-cell-text">{{ title }}</div>
+        <div wx:if="{{ label }}" class="i-cell-desc">{{ label }}</div>
+        <slot></slot>
+    </div>
+    <div catchtap="navigateTo" class="i-cell-ft">
+        <block wx:if="{{value}}">{{ value }}</block>
+        <block wx:else>
+            <slot name="footer"></slot>
+        </block>
+    </div>
+</div>

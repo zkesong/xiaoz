@@ -1,0 +1,4 @@
+<div class="i-class i-collapse" bindcollapse="clickfn">
+  <slot></slot>
+</div>
+

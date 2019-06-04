@@ -1,0 +1,70 @@
+<div class="i-class i-step-item {{parse.getClass(status,current,index)}} {{ direction === 'vertical' ? 'i-step-vertical' : 'i-step-horizontal' }}" style="{{parse.getItemStyle(len,direction)}}">
+    <div class="i-step-item-ico">
+        <div class="i-step-ico" wx:if="{{parse.noIco(status,current,index,icon)  }}">{{ index+1 }}</div>
+        <div class="i-step-ico" wx:else>
+            <i-icon i-class="i-step-ico-in" type="{{parse.getIcoClass(status,icon)}}"></i-icon>
+        </div>
+        <div class="i-step-line" wx:if="{{ index !== len - 1 }}"></div>
+    </div>
+    <div class="i-step-item-main">
+        <div class="i-step-item-title" wx:if="{{title !== ''}}">
+            {{title}}
+        </div>
+        <div class="i-step-item-title" wx:else>
+            <slot name="title"></slot>
+        </div>
+        <div class="i-step-item-content" wx:if="{{content !== ''}}">
+            {{content}}
+        </div>
+        <div class="i-step-item-content" wx:else>
+            <slot name="content"></slot>
+        </div>
+    </div>
+</div>
+<wxs module="parse"> 
+var allStatus = ['wait','process','finish','error'];
+module.exports = {
+    noIco : function( status,current,index,icon ){
+        var aindex = allStatus.indexOf(status);
+        var noIcon = true;
+        if( index < current || icon !== '' ){
+            noIcon = false;
+        }
+        return noIcon;
+    },
+    getIcoClass : function( status,ico ){
+        var class = '';
+        if( status === 'error' ){
+            class = 'close';
+        }else{
+            class = 'right';
+        }
+        if( ico !== '' ){
+            class = ico;
+        }
+        return class;
+    },
+    getItemStyle : function(len,direction){
+        if( direction === 'horizontal' ){
+            return 'width :'+100/len + '%';
+        }else{
+            return 'width : 100%;';
+        }
+    },
+    getClass : function( status,current,index ) {
+        //wait、process、finish、error
+        var startClass = 'i-step-'
+        var classes = '';
+        var cindex = allStatus.indexOf( status );
+        if( cindex !== -1 ){
+            classes = startClass + allStatus[cindex];
+        }
+        if( index < current ){
+            classes = startClass + 'finish';
+        }else if( index === current ){
+            classes = startClass + 'process';
+        }
+        return classes;
+    }
+}
+</wxs>
